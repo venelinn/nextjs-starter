@@ -1,0 +1,64 @@
+.banner {
+	padding: 1rem;
+	background-color: rgba(0, 0, 0, 0.85);
+  color: #fff;
+	position: sticky;
+	width: 100%;
+	bottom: 0;
+	z-index: 1;
+
+	&__container {
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+		@media (min-width: $smedium + 1) {
+			justify-content: center;
+		}
+		@media (max-width: $smedium) {
+			flex-direction: column;
+		}
+	}
+
+	&_btn {
+		width: 100%;
+		@media (min-width: $smedium + 1) {
+			max-width: 120px;
+		}
+	}
+	a {
+		--line-space: var(--link-line-space);
+		text-decoration: none;
+		display: inline-flex;
+		color: inherit;
+		padding-bottom: var(--line-space);
+
+		@include linkHoverCommon;
+
+		&:not(:hover) {
+			&:before {
+				--link-width: 100%;
+			}
+    }
+		@media (any-hover: hover) {
+			&:hover {
+				&:before {
+					--link-width: 100%;
+					--link-line-color: var(--color-sunwing);
+					animation: activeLinkC var(--anim-line-speed) var(--anim-line);
+				}
+			}
+		}
+	}
+	p {
+		margin: 0;
+	}
+}
+
+@keyframes activeLinkC {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}

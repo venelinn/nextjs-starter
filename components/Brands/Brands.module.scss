@@ -1,0 +1,153 @@
+.brands {
+	@include resetList;
+	width: 100%;
+	position: relative;
+	grid-template-columns: var(--grid-template-columns);
+	@media (min-width: $medium + 1) {
+		--item-x: 160px;
+		--grid-template-columns: repeat(auto-fit,minmax(calc(var(--item-x) + 2rem),1fr));
+		display: grid;
+		justify-content: center;
+		gap: 1rem;
+	}
+	@media (max-width: $medium) {
+		--item-x: 100px;
+		display: flex;
+		flex-wrap: wrap;
+		gap: .5rem;
+		justify-content: center;
+		> * {
+			flex: 0 0 calc(33% - .5rem);
+		}
+	}
+	li {
+		aspect-ratio: 1 / 1;
+	}
+	&__item {
+		background-color: var(--brand-background, rgba(white, .5));
+		display: grid;
+		place-items: center;
+		border-radius: 50%;
+		padding: var(--item-padding, 1rem);
+		aspect-ratio: inherit;
+		height: 100%;
+		transition: background .3s ease;
+		@media (min-width: $smedium + 1) {
+			--item-padding: 2rem;
+		}
+		&:hover,
+		&.active {
+			--brand-background: var(--brand-bgr);
+			cursor: var(--_brand-cursor, default);
+			outline: 0;
+			.brands__logo {
+				--logo-scale: 0.9;
+				--logo-filter: invert(1);
+			}
+		}
+
+		&[data-invert="true"] {
+			.brands__logo {
+				--logo-filter: invert(0);
+			}
+			&:hover,
+			&.active {
+				&:before {
+					color: #000;
+				}
+			}
+		}
+		&--with-link {
+			--_brand-cursor: pointer;
+			&:before {
+				@include headingBase;
+				--heading-case: uppercase;
+				@media (min-width: $medium + 1) {
+					@include h4;
+				}
+				@media (max-width: $medium) {
+					--heading-size: .9rem;
+					--heading-weight: var(--font-black);
+				}
+				white-space: nowrap;
+				content: attr(data-text-hover);
+				position: absolute;
+				top: 22%;
+				left: 50%;
+				transform: translateX(-50%);
+				@media (hover: hover) {
+					opacity: 0;
+					transition: opacity .3s ease;
+				}
+				@media (hover: none) {
+					opacity: 1;
+					color: #000;
+				}
+			}
+			@media (hover: none) {
+				&:before {
+					top: 20%;
+				}
+				&:active,
+				&:focus {
+					&::before {
+						color: var(--color-white);
+					}
+				}
+			}
+			@media (hover: hover) {
+				&:hover::before {
+					opacity: 1;
+				}
+			}
+		}
+
+		@media (hover: hover) {
+
+		}
+	}
+	&__logo {
+		width: 100%;
+		scale: var(--logo-scale, .8);
+		@media (max-width: $medium) {
+			--logo-scale: 1;
+		}
+		transition: scale .3s ease;
+		filter: var(--logo-filter, none);
+	}
+}
+
+.brandOverlay {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	overflow: hidden;
+	img {
+		height: 100%;
+		object-fit: cover;
+	}
+	&[data-active="true"] {
+		&:before {
+			position: absolute;
+			inset: 0;
+			content: '';
+			background-color: var(--section-image-overlay-color, rgba(0,0,0,0.3));
+			z-index: 1;
+		}
+	}
+
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

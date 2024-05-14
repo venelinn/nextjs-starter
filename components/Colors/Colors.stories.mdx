@@ -1,0 +1,23 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/blocks";
+
+import { Colors } from "./Colors";
+
+<Meta title="Global" component={Colors}/>
+
+# Colors
+
+## Colors Scheme
+
+Usage:
+
+1. Theme set: `<div/body data-theme="primary" />`
+2. Background: `<div className="bg--COLOR_CODE" />`
+3. Text color: `<div className="text--COLOR_CODE">text</div>`
+
+<Canvas>
+	<Story name="Colors">
+		<div className="colors__storybook">
+			<Colors />
+		</div>
+	</Story>
+</Canvas>

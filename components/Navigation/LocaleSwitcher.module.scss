@@ -1,0 +1,7 @@
+.lang {
+	display: flex;
+	gap: 1rem;
+	&__active {
+		font-weight: var(--font-black);
+	}
+}

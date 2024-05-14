@@ -1,0 +1,28 @@
+.inner {
+	position: relative;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	&__heading,
+	&__subHeading {
+		@media (min-width: $large3 + 1) {
+			padding-left: calc((100vw - var(--page-max-width)) / 2); // TODO: make 1280px a variable
+		}
+		@media (max-width: $large3) {
+			padding-left: var(--padding-mobile);
+		}
+	}
+}
+
+.grid__button__wrapper {
+	margin-top: 2rem;
+	display: flex;
+	justify-content: center;
+}
+
+.slider__wrapper {
+	position: relative;
+	padding-top: 2rem;
+	@media (min-width: $medium + 1) {
+		padding-left: calc((100vw - var(--page-max-width)) / 2); // TODO: make 1280px a variable
+	}
+}

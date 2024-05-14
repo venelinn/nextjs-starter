@@ -1,0 +1,49 @@
+.heading {
+	margin-bottom: 2rem;
+}
+
+.grid {
+	&__content {
+		margin: 1rem 0 2rem;
+	}
+	&__button__wrapper {
+		margin-top: 2rem;
+		display: flex;
+		justify-content: center;
+	}
+}
+
+.item__container {
+	container-type: inline-size;
+	display: grid;
+	&:hover {
+		position: relative;
+		z-index: 1;
+	}
+}
+
+.main {
+	--section-min-height: auto;
+}
+
+
+// Variants
+
+.grid-epic {
+	display: grid;
+	gap: 2rem;
+	@media (min-width: $medium + 1) {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+.grid-leadership {
+	display: flex;
+	gap: var(--_leadership-gap, 1rem);
+	justify-content: space-around;
+	padding: 2rem 0;
+	@media (max-width: $medium) {
+		flex-wrap: wrap;
+		--_leadership-gap: 3rem
+	}
+}

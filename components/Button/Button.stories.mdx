@@ -1,0 +1,25 @@
+import { Meta, Story, Primary, Controls, Source } from "@storybook/blocks";
+import { Button } from "./Button";
+
+<Meta title="Global/Button" component={Button} />
+
+# Buttons
+
+<Story
+	name="Button"
+	args={{
+		label: "Button label",
+	}}
+	>
+	{args => <Button {...args} />}
+</Story>
+
+
+<Primary />
+<Source />
+
+## Props
+
+<Controls />
+
+
