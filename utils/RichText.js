@@ -1,8 +1,8 @@
 // contentfulRichTextRenderer.js
 
 import React from "react";
-import { Heading } from "@/components/Headings/Heading";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { Heading } from "../components/Headings";
 
 export const renderEmbeddedEntryBlock = (node, children) => {
   if (node.data.target.sys.contentType.sys.id === "heading") {

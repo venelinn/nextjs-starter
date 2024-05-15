@@ -7,7 +7,7 @@ import {
 	PinterestShareButton,
   PinterestIcon,
 } from "next-share"
-import ShareIcon from "@/components/Icons/Share";
+import ShareIcon from "../Icons/Share";
 import styles from "./Share.module.scss";
 
 const Share = ({url, title, facebook, twitter, pinterest}) => {

@@ -3,8 +3,6 @@ import React from "react";
 import "./Colors.scss";
 
 const primaryColors = ["blue", "grey", "yellow", "light-grey", "lighter-grey"];
-const brandColors = ["sunwing", "westjet", "sov", "ve", "luxe"];
-
 
 const Box = ({ color }) => (
 	<div className="color__box">
@@ -24,14 +22,8 @@ const Colors = () => (
 				<Box color={color} key={color} />
 			))}
 		</div>
-		<div className="color-row">
-			<h2 className="color-row__title">Brand</h2>
-			{brandColors.map(color => (
-				<Box color={color} key={color} />
-			))}
-		</div>
 	</div>
 );
 
 export default Colors;
-export { Colors, primaryColors, brandColors };
+export { Colors, primaryColors };

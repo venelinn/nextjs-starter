@@ -1,10 +1,10 @@
 import Markdown from "markdown-to-jsx";
 import { useRouter } from "next/router";
-import Section from "@/components/Section";
-import Share from "@/components/Share/Share";
-import Chevron from "@/components/Icons/Chevron";
-import { Heading } from "@/components/Headings/Heading";
-import FormattedDate from "@/utils/DateFormat"; // Import the FormattedDate component
+import Section from "../Section";
+import Share from "../Share/Share";
+import Chevron from "../Icons/Chevron";
+import { Heading } from "../Headings/Heading";
+import FormattedDate from "../../utils/DateFormat"; // Import the FormattedDate component
 import styles from "./Article.module.scss";
 
 const Article = ({content, date, heading, id, locale}) => {

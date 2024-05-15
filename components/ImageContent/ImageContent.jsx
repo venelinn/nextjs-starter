@@ -1,9 +1,9 @@
 import Markdown from "markdown-to-jsx";
 import Image from "next/image";
-import Section from "@/components/Section";
-import { BrandsConnector } from "@/components/Brands";
-import { Button } from "@/components/Button/Button.jsx";
-import styles from "@/components/ImageContent/ImageContent.module.scss";
+import Section from "../Section";
+import { BrandsConnector } from "../Brands";
+import { Button } from "../Button/Button.jsx";
+import styles from "./ImageContent.module.scss";
 
 const ContentSection = ({ content, link } ) => (
 	<div data-anim="content-image" className={styles.module__content}>

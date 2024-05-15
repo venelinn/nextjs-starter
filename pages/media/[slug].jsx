@@ -1,10 +1,10 @@
 import { createClient } from "contentful";
 import { getPages, getSiteConfig, getNavigationLinks } from "@/utils/content";
-import localization from "@/utils/localization";
-import { getRCLMessages } from "@/utils/rclUtils";
-import Skeleton from "@/components/Skeleton";
-import Layout from "@/components/Layout";
-import { ArticleConnector } from "@/components/Article";
+import localization from "../../utils/localization";
+import { getRCLMessages } from "../../utils/rclUtils";
+import Skeleton from "../../components/Skeleton";
+import Layout from "../../components/Layout";
+import { ArticleConnector } from "../../components/Article";
 
 const client = createClient({
 	space: process.env.CONTENTFUL_CORPORATENEWS_SPACE_ID,

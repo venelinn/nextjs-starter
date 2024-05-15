@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from "react"
-import Section from "@/components/Section";
+import Section from "../Section";
 import Markdown from "markdown-to-jsx";
 import cx from "classnames";
-import Button from "@/components/Button/Button";
+import Button from "../Button";
 import { Heading } from "@/components/Headings/Heading";
-import styles from "@/components/Careers/Careers.module.scss";
+import styles from "./Careers.module.scss";
 
 const Careers = ({heading, content, link, backgroundText, backgroundTextRepeat, variant}) => {
 	const repeatCount = parseInt(backgroundTextRepeat, 10);

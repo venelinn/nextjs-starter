@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Markdown from "markdown-to-jsx";
-import { Heading } from "@/components/Headings/Heading";
-import FormattedDate from "@/utils/DateFormat"; //
+import { Heading } from "../Headings/Heading";
+import FormattedDate from "../../utils/DateFormat";
 import styles from "./ListItem.module.scss";
 
 export default function ListItem({ locale, media }) {

@@ -2,10 +2,10 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import useNextCssRemovalPrevention from "@/hooks/useNextCssRemovalPrevention";
-import { TransitionContextProvider } from "@/context/transitionContext";
-import { NavigationContextProvider } from "@/context/navigationContext";
-import { DataProvider } from "@/utils/DataProvider";
+import useNextCssRemovalPrevention from "../hooks/useNextCssRemovalPrevention";
+import { TransitionContextProvider } from "../context/transitionContext";
+import { NavigationContextProvider } from "../context/navigationContext";
+import { DataProvider } from "../utils/DataProvider";
 
 import "@/styles/globals.scss";
 

@@ -1,12 +1,10 @@
 import PropTypes from "prop-types";
 import Image from "next/image";
-import Markdown from "markdown-to-jsx";
 import cx from "classnames";
-import { renderRichTextContent } from "@/utils/RichText"; // Import the renderRichTextContent function
-import Section from "@/components/Section";
-import { Heading } from "@/components/Headings/Heading";
-import Info from "@/components/Icons/Info";
-// import { Contacts } from "@/components/Contacts";
+import { renderRichTextContent } from "../../utils/RichText";
+import Section from "../Section";
+import { Heading } from "../Headings";
+import Info from "../Icons/Info";
 import styles from "./Contacts.module.scss";
 
 const Contacts = ({content, inquiries, pageName}) => {

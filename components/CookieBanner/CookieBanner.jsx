@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { getCookie, setCookie } from "@/utils/helper";
-import { RCL as useTranslation } from "@/components/RCL";
-import { Button } from "@/components/Button/Button";
+import { getCookie, setCookie } from "../../utils/helper";
+import { RCL as useTranslation } from "../RCL";
+import { Button } from "../Button/Button";
 import * as styles from "./CookieBanner.module.scss";
 
 const CookieBanner = ({ onLoad, onUnload }) => {

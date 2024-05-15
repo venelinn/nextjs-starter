@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import Image from "next/image";
-import { renderRichTextContent } from "@/utils/RichText";
-import { Heading } from "@/components/Headings/Heading";
-import ArrowDown from "@/components/Icons/ArrowDown";
+import { renderRichTextContent } from "../../../utils/RichText";
+import { Heading } from "../../Headings";
+import ArrowDown from "../../Icons/ArrowDown";
 import styles from "./Epic.module.scss";
 
 const Epic = ({data, tabIndex}) => {

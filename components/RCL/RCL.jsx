@@ -2,7 +2,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Markdown from "markdown-to-jsx";
-import { useData } from "@/utils/DataProvider";
+import { useData } from "../../utils/DataProvider";
 
 function RCL({ searchKey }) {
   const [state] = useData();

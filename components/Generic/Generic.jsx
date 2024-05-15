@@ -1,6 +1,6 @@
-import Section from "@/components/Section";
-import { renderRichTextContent } from "@/utils/RichText"; // Import the renderRichTextContent function
-import styles from "@/components/Generic/Generic.module.scss";
+import Section from "../Section";
+import { renderRichTextContent } from "../../utils/RichText"; // Import the renderRichTextContent function
+import styles from "./Generic.module.scss";
 
 const Generic = ({ heading, pageName, content }) => {
 	const pageHeading = heading || {

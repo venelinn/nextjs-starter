@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import Head from "next/head";
-import { useData } from "@/utils/DataProvider";
-import Navigation from "@/components/Navigation/Navigation";
-import MetaData from "@/components/MetaData";
-import Footer from "@/components/Footer/Footer";
-import CookieBanner from "@/components/CookieBanner/CookieBanner";
+import { useData } from "../utils/DataProvider";
+import Navigation from "./Navigation/Navigation";
+import MetaData from "./MetaData";
+import Footer from "./Footer/Footer";
+import CookieBanner from "./CookieBanner/CookieBanner";
 
 function Layout({ page, siteConfig, navigationLinks, children }) {
 	const [state, setState] = useData();

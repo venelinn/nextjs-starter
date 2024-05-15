@@ -1,8 +1,8 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import useScrollbar from "@/hooks/useScrollbar";
-import useWindowSize from "@/hooks/useWindowSize";
-import useLockedScroll from "@/hooks/useLockedScroll";
+import useScrollbar from "../hooks/useScrollbar";
+import useWindowSize from "../hooks/useWindowSize";
+import useLockedScroll from "../hooks/useLockedScroll";
 
 const NavigationContext = createContext({
   open: false,

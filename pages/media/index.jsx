@@ -1,12 +1,12 @@
 import { createClient } from "contentful";
-import { getPages, getSiteConfig, getNavigationLinks } from "@/utils/content";
-import localization from "@/utils/localization";
-import { normalizeSlug } from "@/utils/common";
-import { getRCLMessages } from "@/utils/rclUtils";
-import { componentMap } from "@/components";
-import Layout from "@/components/Layout";
-import Section from "@/components/Section";
-import ListItem from "@/components/Article/ListItem";
+import { getPages, getSiteConfig, getNavigationLinks } from "../../utils/content";
+import localization from "../../utils/localization";
+import { normalizeSlug } from "../../utils/common";
+import { getRCLMessages } from "../../utils/rclUtils";
+import { componentMap } from "../../components";
+import Layout from "../../components/Layout";
+import Section from "../../components/Section";
+import ListItem from "../../components/Article";
 
 export async function getStaticProps({ locale }) {
 	const pageLocale = locale || localization.defaultLocale;

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
-import { Grid } from "@/components/Grid";
-import { RCL as useTranslation } from "@/components/RCL";
+import { Grid } from "./Grid";
+import { RCL as useTranslation } from "../RCL";
 
 const GridConnector = (props) => {
 	return (

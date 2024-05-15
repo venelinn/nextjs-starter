@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useRouter } from "next/router";
-import useTransitionContext from "@/context/transitionContext";
-import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
+import useTransitionContext from "../context/transitionContext";
+import useIsomorphicLayoutEffect from "../hooks/useIsomorphicLayoutEffect";
 
 export default function TransitionLayout({ children }) {
 	useEffect(() => {

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Article } from "@/components/Article";
+import { Article } from "./Article";
 
 const ArticleConnector = ({id, body, date, title, locale}) => {
 	return (

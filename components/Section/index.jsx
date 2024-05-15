@@ -4,9 +4,9 @@ import { useRouter } from "next/router";
 import cx from "classnames";
 import Image from "next/image";
 import gsap from "gsap";
-import useReduceMotion from "@/hooks/useReduceMotion";
-import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
-import { Heading } from "@/components/Headings/Heading";
+import useReduceMotion from "../../hooks/useReduceMotion";
+import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
+import { Heading } from "../Headings";
 import styles from  "./Section.module.scss";
 
 const animateSectionTitle = (element, animationID) => {

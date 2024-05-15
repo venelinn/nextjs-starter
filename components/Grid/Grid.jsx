@@ -2,11 +2,11 @@ import PropTypes from "prop-types";
 import { useRef } from "react";
 import cx from "classnames";
 import Markdown from "markdown-to-jsx";
-import Section from "@/components/Section";
-import Button from "@/components/Button/Button";
-import Epic from "@/components/Grid/Variants/Epic";
-import Leader from "@/components/Grid/Variants/Leader";
-import styles from "@/components/Grid/Grid.module.scss";
+import Section from "../Section";
+import Button from "../Button/Button";
+import Epic from "../Grid/Variants/Epic";
+import Leader from "../Grid/Variants/Leader";
+import styles from "./Grid.module.scss";
 
 const Grid = ({ heading, subHeading, content, items, link, theme, variant, labels}) => {
 	const element = useRef();

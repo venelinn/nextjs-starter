@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import useNavigationContext from "@/context/navigationContext";
+import useNavigationContext from "../context/navigationContext";
 import useIsomorphicLayoutEffect from "./useIsomorphicLayoutEffect";
 
 export default function useLockedScroll(initialLocked) {

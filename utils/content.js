@@ -1,6 +1,6 @@
 import { createClient } from "contentful";
 import { PAGE_TYPE, SITE_CONFIG_TYPE, IS_DEV, normalizeSlug } from "./common";
-import localization from "@/utils/localization";
+import localization from "./localization";
 
 const client = createClient({
 	accessToken: IS_DEV ? process.env.CONTENTFUL_PREVIEW_TOKEN : process.env.CONTENTFUL_DELIVERY_TOKEN,

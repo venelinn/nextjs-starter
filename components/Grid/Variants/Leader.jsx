@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 import Image from "next/image";
 import { useState } from "react";
 import cx from "classnames";
-import { renderRichTextContent } from "@/utils/RichText";
-import { Modal } from "@/components/Modal/Modal";
-import { Heading } from "@/components/Headings/Heading";
+import { renderRichTextContent } from "../../../utils/RichText";
+import { Modal } from "../../Modal/Modal";
+import { Heading } from "../../Headings";
 import styles from "./Leader.module.scss";
 
 const Leader = ({data, tabIndex, labels}) => {

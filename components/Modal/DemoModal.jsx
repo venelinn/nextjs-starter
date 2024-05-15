@@ -1,9 +1,9 @@
 import { useState, useCallback, useMemo, useRef } from "react";
 import gsap from "gsap";
 import cx from "classnames";
-import useLockedScroll from "@/hooks/useLockedScroll";
-import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
-import useReduceMotion from "@/hooks/useReduceMotion";
+import useLockedScroll from "../../hooks/useLockedScroll";
+import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
+import useReduceMotion from "../../hooks/useReduceMotion";
 import Modal from "./Modal";
 import styles from "./DemoModal.module.scss";
 

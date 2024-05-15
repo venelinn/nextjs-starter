@@ -3,12 +3,12 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import gsap from "gsap";
 import cx from "classnames";
-import useReduceMotion from "@/hooks/useReduceMotion";
-import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
-import Section from "@/components/Section";
-import Instagram from "@/components/Icons/Instagram";
-import LinkedIn from "@/components/Icons/LinkedIn";
-import styles from "@/components/Footer/Footer.module.scss";
+import useReduceMotion from "../../hooks/useReduceMotion";
+import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
+import Section from "../Section";
+import Instagram from "../Icons/Instagram";
+import LinkedIn from "../Icons/LinkedIn";
+import styles from "./Footer.module.scss";
 
 const iconComponents = {
   Instagram,

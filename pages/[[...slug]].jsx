@@ -1,9 +1,9 @@
-import { getPages, getPagePaths, getSiteConfig, getNavigationLinks } from "@/utils/content";
-import localization from "@/utils/localization";
-import { IS_DEV, normalizeSlug } from "@/utils/common";
-// import { getRCLMessages } from "@/utils/rclUtils";
+import { getPages, getPagePaths, getSiteConfig, getNavigationLinks } from "../utils/content";
+import localization from "../utils/localization";
+import { IS_DEV, normalizeSlug } from "../utils/common";
+// import { getRCLMessages } from "../utils/rclUtils";
 import { componentMap } from "../components";
-import Layout from "@/components/Layout";
+import Layout from "../components/Layout";
 
 function ComposablePage({ page, siteConfig, navigationLinks }) {
 	return (

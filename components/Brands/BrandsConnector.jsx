@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
-import { Brands } from "@/components/Brands";
-import { RCL as useTranslation } from "@/components/RCL";
+import { Brands } from "./Brands";
+import { RCL as useTranslation } from "../RCL";
 
 const BrandsConnector = ({data, autoplay}) => {
 	return (

@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
-import cx from "classnames";
-import { useRouter } from "next/router";
-import useNavigationContext from "@/context/navigationContext";
-import useElementSize from "@/hooks/useElementSize";
-import useWindowSize from "@/hooks/useWindowSize";
-import { LocaleSwitcher } from "@/components/Navigation/LocaleSwitcher";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import cx from "classnames";
+import useNavigationContext from "../../context/navigationContext";
+import useElementSize from "../../hooks/useElementSize";
+import useWindowSize from "../../hooks/useWindowSize";
+import { LocaleSwitcher } from "./LocaleSwitcher";
 import styles from "./Navigation.module.scss";
 
 function Hamburger({ isOpen, toggle }) {

@@ -12,7 +12,7 @@ import { useRouter } from "next/router";
 import * as React from "react";
 import { useEffect, useRef, useState } from "react";
 import localization from "../../utils/localization";
-import Globe from "@/components/Icons/Globe";
+import Globe from "../Icons/Globe";
 import cx from "classnames";
 import styles from "./LocaleSwitcher.module.scss";
 
