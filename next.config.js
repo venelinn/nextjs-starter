@@ -1,4 +1,4 @@
-const localization = require('./utils/localization');
+const localization = require("./utils/localization");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -9,7 +9,7 @@ const nextConfig = {
 	},
 	trailingSlash: false,
 	images: {
-		domains: ['downloads.ctfassets.net', 'res.cloudinary.com', 'images.ctfassets.net'],
+		domains: ["downloads.ctfassets.net", "res.cloudinary.com", "images.ctfassets.net"],
 	},
 	sassOptions: {
 		additionalData: "@import 'styles/shared.scss';",

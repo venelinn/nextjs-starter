@@ -8,7 +8,7 @@
     "start": "next start",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build --output-dir ./.next/storybook",
-		"build-dictionary": "style-dictionary build -c ./tokens/config.js"
+    "build-dictionary": "style-dictionary build -c ./tokens/config.js"
   },
   "dependencies": {
     "date-fns": "^2.22.1",
@@ -26,13 +26,14 @@
     "@contentful/rich-text-react-renderer": "^15.17.1",
     "@stackbit/cms-contentful": "^0.4.7",
     "@stackbit/types": "^0.9.1",
-    "@storybook/addon-essentials": "^7.3.2",
-    "@storybook/addon-interactions": "^7.3.2",
-    "@storybook/addon-links": "^7.3.2",
+    "@storybook/addon-essentials": "7.6.19",
+    "@storybook/addon-interactions": "7.6.19",
+    "@storybook/addon-links": "7.6.19",
+    "@storybook/addon-mdx-gfm": "^7.6.19",
     "@storybook/addon-onboarding": "^1.0.8",
-    "@storybook/blocks": "^7.3.2",
-    "@storybook/nextjs": "^7.3.2",
-    "@storybook/react": "^7.3.2",
+    "@storybook/blocks": "7.6.19",
+    "@storybook/nextjs": "7.6.19",
+    "@storybook/react": "7.6.19",
     "@storybook/testing-library": "^0.2.0",
     "@types/node": "^20.3.1",
     "@types/react": "18.2.12",
@@ -49,7 +50,7 @@
     "prop-types": "^15.8.1",
     "sass": "^1.57.1",
     "sass-loader": "^13.3.0",
-    "storybook": "^7.3.2",
+    "storybook": "7.6.19",
     "style-dictionary": "^3.9.2",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.0.4"
