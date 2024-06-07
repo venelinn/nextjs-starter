@@ -4,7 +4,6 @@ import { useData } from "../utils/DataProvider";
 import Navigation from "./Navigation/Navigation";
 import MetaData from "./MetaData";
 import Footer from "./Footer/Footer";
-import CookieBanner from "./CookieBanner/CookieBanner";
 
 function Layout({ page, siteConfig, navigationLinks, children }) {
 	const [state, setState] = useData();
@@ -42,8 +41,6 @@ function Layout({ page, siteConfig, navigationLinks, children }) {
 				{children}
 			</main>
 			<Footer siteConfig={siteConfig?.footer} links={footerLinks} pageLocale={page.locale} />
-			<CookieBanner
-			/>
 		</>
 	);
 }

@@ -1,7 +1,6 @@
 import { getPages, getPagePaths, getSiteConfig, getNavigationLinks } from "../utils/content";
 import localization from "../utils/localization";
 import { IS_DEV, normalizeSlug } from "../utils/common";
-// import { getRCLMessages } from "../utils/rclUtils";
 import { componentMap } from "../components";
 import Layout from "../components/Layout";
 
@@ -58,17 +57,14 @@ const getStaticProps = async ({ params, locale }) => {
 	}
 
 	// Include the "order" and "location" properties in headerLinks
-	const navigationLinks = getNavigationLinks(allPages, pageLocale);
+	const navigationLinks = await getNavigationLinks(allPages, pageLocale);
 
-	//RCL
-	// const rclMessages = await getRCLMessages(pageLocale);
 
 	return {
 		props: {
 			page,
 			siteConfig,
 			navigationLinks,
-			// rclMessages
 		}
 	};
 };

@@ -27,22 +27,22 @@ const animateSectionTitle = (element, animationID) => {
 };
 
 const Section = ({
-	id,
-  children,
-  className,
-  classNames,
-  color,
-  image,
-	size,
-	anchor,
-	animationID,
-	isHidden,
-	heading,
-	subHeading,
-	theme,
-	isolation,
-	fullHeight,
-	nested,
+	id = "",
+  children = null,
+  className = "",
+  classNames = {},
+  color = null,
+  image = undefined,
+	size = "fixed",
+	anchor = undefined,
+	animationID = null,
+	isHidden = false,
+	heading = {},
+	subHeading = "",
+	theme = "light",
+	isolation = false,
+	fullHeight = false,
+	nested = false,
   ...props
 }) => {
 	const reduceMotion = useReduceMotion();
@@ -148,22 +148,6 @@ Section.propTypes = {
 	title: PropTypes.string,
 	subtitle: PropTypes.string,
 	theme: PropTypes.oneOf(["light", "dark", "hero", "grey"])
-};
-
-Section.defaultProps = {
-	children: null,
-  className: undefined,
-  size: "fixed",
-  color: null,
-  anchor: undefined,
-  image: undefined,
-	classNames: undefined,
-	animationID: null,
-	anchor: undefined,
-	isHidden: false,
-	title: undefined,
-	subtitle: undefined,
-	theme: "light",
 };
 
 export default Section;

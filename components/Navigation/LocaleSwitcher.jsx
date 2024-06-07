@@ -66,7 +66,12 @@ export const LocaleSwitcher = ({ pageLocale, isOpen }) => {
 
   return (
     <div className={styles.languages}>
-			<div className={styles.lang}>
+			<button
+				className={`${langVisible || isOpen ? "hidden" : ""}`}
+				onClick={toggleLang}>
+					<Globe />
+			</button>
+			<div className={`${langVisible || isOpen ? "flex" : "hidden"} ${styles.lang}`}>
 				{localization.locales.map((lang) => {
 					const isActive = pageLocale === lang;
 					return(

@@ -20,7 +20,7 @@ export async function getPagePaths(locale) {
 	const { items } = await getEntries(PAGE_TYPE, { locale });
 
 	return items
-		.filter((x) => !["/media"].includes(x.fields.slug))
+		.filter((x) => !["/portfolio"].includes(x.fields.slug))
 		.map((page) => {
 			let slug = page.fields.slug.split("/").filter(Boolean);
 			return { params: { slug }, locale: page.sys.locale.split("-")[0] };
@@ -32,6 +32,7 @@ export async function getPages(locale) {
 	return response.items.map(mapEntry);
 }
 
+
 export async function getSiteConfig(locale) {
 	let response = await getEntries(SITE_CONFIG_TYPE, { locale });
 	const itemCount = response.items?.length;
@@ -41,6 +42,45 @@ export async function getSiteConfig(locale) {
 		console.error("Expected 1 site config object, got:", itemCount);
 		return null;
 	}
+}
+
+// Add this function to fetch portfolio items
+// export async function getPortfolioItems(locale) {
+//   let response = await getEntries("portfolio", { locale });
+//   return response.items.map(mapEntry);
+// }
+
+export async function getPortfolioItems(locale) {
+  try {
+    console.log("Fetching portfolio items for locale:", locale);
+    const response = await getEntries("portfolio", { locale });
+
+    if (!response.items) {
+      console.error("No items found in the response:", response);
+      return [];
+    }
+
+    return response.items.map(mapEntry);
+  } catch (error) {
+    console.error("Error fetching portfolio items:", error);
+    return [];
+  }
+}
+
+export async function getContentItems(contentType = "portfolio", locale) {
+  try {
+    const response = await getEntries(contentType, { locale });
+
+    if (!response.items) {
+      console.error(`No items found in the response for content type: ${contentType}`, response);
+      return [];
+    }
+
+    return response.items.map(mapEntry);
+  } catch (error) {
+    console.error(`Error fetching items for content type: ${contentType}`, error);
+    return [];
+  }
 }
 
 function mapEntry(entry, localePassed) {
@@ -104,14 +144,47 @@ function parseField(value, locale) {
 	return value;
 }
 
-export const getNavigationLinks = (pages, locale) =>
-	pages
-		.filter((e) => e.locale === locale)
-		.sort((a, b) => (a.order || 0) - (b.order || 0))
-		.map((e) => ({
-			pageName: e.pageName,
-			slug: normalizeSlug(e.slug),
-			locale: e.locale,
-			order: e.order !== undefined ? e.order : null, // Include the "order" property, defaulting to null
-			location: e.location !== undefined ? e.location : null, // Include the "location" property, defaulting to null
-		}));
+const getContentModel = async (contentType, locale) => {
+  const contentfulLocale = localization.contentfulLocales[localization.locales.indexOf(locale)] || locale;
+
+  try {
+    const entries = await client.getEntries({
+      content_type: contentType,
+      locale: contentfulLocale,
+    });
+    return entries.items.map(entry => entry.fields);
+  } catch (error) {
+    console.error(`Error fetching entries: ${error.message}`);
+    throw error;
+  }
+};
+
+
+export const getNavigationLinks = async (pages, locale) => {
+	const contentfulLocale = localization.contentfulLocales[localization.locales.indexOf(locale)] || locale;
+	const customLinks = await getContentModel("customLinks", contentfulLocale);
+
+  const remappedCustomLinks = customLinks
+	.sort((a, b) => (a.order || 0) - (b.order || 0))
+	.map(link => ({
+    pageName: link.text,
+    slug: link.url !== undefined ? link.url : null,
+		locale,
+    target: link.target,
+    order: link.order !== undefined ? link.order : null,
+    location: link.location !== undefined ? link.location : null,
+  }));
+
+  const navigationLinks = pages
+	.filter((e) => e.locale === locale)
+	.sort((a, b) => (a.order || 0) - (b.order || 0))
+	.map((e) => ({
+		pageName: e.pageName,
+		slug: normalizeSlug(e.slug),
+		locale: e.locale,
+		order: e.order !== undefined ? e.order : null,
+		location: e.location !== undefined ? e.location : null,
+	}));
+
+  return [...navigationLinks, ...remappedCustomLinks];
+};

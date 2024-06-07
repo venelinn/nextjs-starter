@@ -1,7 +1,6 @@
 import Markdown from "markdown-to-jsx";
-import Image from "next/image";
+import ContentfulImage from "../ContentfulImage/ContentfulImage";
 import Section from "../Section";
-import { BrandsConnector } from "../Brands";
 import { Button } from "../Button/Button.jsx";
 import styles from "./ImageContent.module.scss";
 
@@ -19,13 +18,7 @@ const ImageSection = ({ image }) => (
 		className={styles.module__image}
 		data-anim="cover-image"
 		>
-			<Image
-				src={image.src}
-				alt={image.alt}
-				width={image.width}
-				height={image.height}
-				data-sb-field-path="image"
-				/>
+			<ContentfulImage image={image} />
   </div>
 );
 
@@ -35,7 +28,6 @@ export const ImageContent = ({
 	subHeading,
 	animationID,
 	theme,
-	brands,
 	image,
 	content,
 	fullHeight,
@@ -51,9 +43,6 @@ export const ImageContent = ({
 			fullHeight={fullHeight}
 			isolation={isolation}
 			theme={theme}
-			classNames={{
-				inner: brands ? styles.with__brands : null,
-			}}
     >
 			<div
 				className={styles.module}
@@ -63,16 +52,15 @@ export const ImageContent = ({
 			{isContentFirst ? (
 					<>
 						<ContentSection content={content} />
-						{image && image.src && <ImageSection image={image} />}
+						{image && <ImageSection image={image} />}
 					</>
 				) : (
 					<>
-						{image && image.src && <ImageSection image={image} />}
+						{image && <ImageSection image={image} />}
 						<ContentSection content={content} />
 					</>
 				)}
 			</div>
-			{brands && <BrandsConnector data={brands.brand} autoplay={brands?.autoplay} />}
 		</Section>
   );
 };

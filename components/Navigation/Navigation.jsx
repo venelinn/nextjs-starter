@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import ContentfulImage from "../ContentfulImage/ContentfulImage";
 import { useRouter } from "next/router";
 import cx from "classnames";
 import useNavigationContext from "../../context/navigationContext";
 import useElementSize from "../../hooks/useElementSize";
 import useWindowSize from "../../hooks/useWindowSize";
 import { LocaleSwitcher } from "./LocaleSwitcher";
+import { Social } from "../Social";
 import styles from "./Navigation.module.scss";
 
 function Hamburger({ isOpen, toggle }) {
@@ -45,7 +46,6 @@ const Navigation = ({ pageLocale, siteConfig, links, allLinks, isNavigationVisib
       document.body.classList.remove(styles.fixedNav);
     };
   }, [fixed]);
-
   return (
     <>
       <style jsx global>{`
@@ -66,24 +66,7 @@ const Navigation = ({ pageLocale, siteConfig, links, allLinks, isNavigationVisib
 					}}
 				>
 					<div className={styles.navigation__inner} data-anim="navigation" data-is-nav-visible={isNavigationVisible}>
-						<div className={cx(styles.navigation__logo, {
-							[styles["with-nav"]]: isNavigationVisible !== false,
-						})}>
-						{headerText && (
-							<Link href="/" locale={pageLocale}>
-								<span data-sb-field-path={siteConfig.id + ":headerText"}>
-									<Image
-										src={siteConfig?.logo?.image[0]?.src}
-										alt={siteConfig?.logo?.alt}
-										width={siteConfig?.logo?.image[0]?.width}
-										height={siteConfig?.logo?.image[0]?.height}
-										className={styles.logo}
-										/>
-								</span>
-							</Link>
-						)}
-						</div>
-							<div className={styles.navigation__menu}>
+						<div className={styles.navigation__menu}>
 							{isNavigationVisible !== false && (
 								<div className={styles.navigation__menu__wrapper}>
 									<div className={styles["navigation__menu-list"]}>
@@ -93,6 +76,7 @@ const Navigation = ({ pageLocale, siteConfig, links, allLinks, isNavigationVisib
 												<Link
 													key={link.slug}
 													href={link.slug}
+													target={link?.target}
 													locale={locale}
 													className={cx("link", styles.link, {
 														["link--active"]: isActive,
@@ -106,13 +90,24 @@ const Navigation = ({ pageLocale, siteConfig, links, allLinks, isNavigationVisib
 									</div>
 								</div>
 								)}
-							</div>
-
-							{isDesktop && (
+						</div>
+						<div className={cx(styles.navigation__logo, {
+							[styles["with-nav"]]: isNavigationVisible !== false,
+						})}>
+						{headerText && (
+							<Link href="/" locale={pageLocale}>
+								<ContentfulImage image={siteConfig.logo} />
+							</Link>
+						)}
+						</div>
+						{isDesktop && (
+							<div>
+								<Social items={siteConfig.footer.social} />
 								<div className={styles.navigation__lang}>
 									<LocaleSwitcher pageLocale={pageLocale} />
 								</div>
-							)}
+							</div>
+						)}
 
 						{isOpen && isMobile && (
 							<>
@@ -123,6 +118,7 @@ const Navigation = ({ pageLocale, siteConfig, links, allLinks, isNavigationVisib
 											<Link
 												key={link.slug}
 												href={link.slug}
+												target={link?.target}
 												locale={locale}
 												className={cx(styles.navLink, {
 													[styles.navLinkActive]: isActive,

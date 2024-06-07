@@ -6,14 +6,8 @@ import cx from "classnames";
 import useReduceMotion from "../../hooks/useReduceMotion";
 import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
 import Section from "../Section";
-import Instagram from "../Icons/Instagram";
-import LinkedIn from "../Icons/LinkedIn";
 import styles from "./Footer.module.scss";
 
-const iconComponents = {
-  Instagram,
-  LinkedIn,
-};
 
 export default function Footer({siteConfig, links, pageLocale}) {
 	const reduceMotion = useReduceMotion();
@@ -49,23 +43,6 @@ export default function Footer({siteConfig, links, pageLocale}) {
 			<div className={styles.footer} ref={element}>
 				<div className={styles.footer__content}>
 					<div className={styles.footer__top}>
-						<div className={styles.footer__social}>
-							{siteConfig?.social.map(item => {
-								const Icon = iconComponents[item.iconName];
-								return (
-									<a
-										href={item.url}
-										key={item.id}
-										target={item.external ? "_blank" : undefined}
-										rel={item.external ? "noopener noreferrer" : undefined}
-										title={item.name}
-									>
-										<Icon />
-									</a>
-
-								)
-							})}
-						</div>
 						<div className={styles.footer__nav}>
 							{links.map((link) => {
 								const isActive = router.asPath === link.slug;

@@ -7,12 +7,11 @@ const ImageContentConnector = (props) => {
 		subHeading={props?.subHeading}
 		heading={props?.heading}
 		theme={props?.theme?.color}
-		image={props?.image?.[0]}
+		image={props?.image}
 		content={props?.body}
 		isolation={props?.isolation}
 		fullHeight={props?.fullHeight}
 		id={props?.id}
-		brands={props?.brands}
 		isContentFirst={props?.isContentFirst}
 	/>
 )}
